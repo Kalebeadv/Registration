@@ -1,9 +1,13 @@
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class DB_INSERT {
 	
-	public void DB_INSERT_PF(String id_pf,String first_name,String last_name, String cpf,String date_of_birth,String sex,String email,String password)
+	public static void main(String[] args) {
+		
+	}
+	public void DB_INSERT_INDIVIDUALS(String id_pf,String first_name,String last_name, String cpf,String date_of_birth,String sex,String email,String password)
 	{
 		DB_CONNECTION obj_db_connection = new DB_CONNECTION();
 		Connection connection = obj_db_connection.get_connection();
@@ -32,7 +36,7 @@ public class DB_INSERT {
 		}
 	}
 	
-	public void DB_INSERT_PJ(String id_pj,String cnpj, String social_reason,String fancy_name, String contact)
+	public void DB_INSERT_LEGAL_ENTITY(String id_pj,String cnpj, String social_reason,String fancy_name, String contact)
 	{
 		DB_CONNECTION obj_db_connection = new DB_CONNECTION();
 		Connection connection = obj_db_connection.get_connection();
@@ -54,6 +58,10 @@ public class DB_INSERT {
 		catch (Exception e) 
 		{
 			System.out.println(e);
-		}	
+		}
+		
+		
 	}
+	
+
 }
