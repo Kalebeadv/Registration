@@ -2,9 +2,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DB_INDIVIDUALS_SELECT {
+public class Db_individuals_select {
 	
-	private DB_CONNECTION obj_db_connection = new DB_CONNECTION();
+	private Db_connection obj_db_connection = new Db_connection();
 	private Connection connection;
 	private PreparedStatement ps;
 	private ResultSet rs;
@@ -18,7 +18,7 @@ public class DB_INDIVIDUALS_SELECT {
 	public void SELECT_BY_PRIMARY_KEY(String id_pf)
 	{
 		
-		setObj_db_connection(new DB_CONNECTION());
+		setObj_db_connection(new Db_connection());
 		setConnection(getObj_db_connection().GETMYCONNECTION());
 		setPs(null);
 		setRs(null);
@@ -52,7 +52,7 @@ public class DB_INDIVIDUALS_SELECT {
 
 	public void SELECT_ALL_FROM_TABLE()
 	{
-		setObj_db_connection(new DB_CONNECTION());
+		setObj_db_connection(new Db_connection());
 		setConnection(getObj_db_connection().GETMYCONNECTION());
 		setPs(null);
 		setRs(null);
@@ -82,11 +82,11 @@ public class DB_INDIVIDUALS_SELECT {
 	
 	
 
-	public DB_CONNECTION getObj_db_connection() {
+	public Db_connection getObj_db_connection() {
 		return obj_db_connection;
 	}
 
-	public void setObj_db_connection(DB_CONNECTION obj_db_connection) {
+	public void setObj_db_connection(Db_connection obj_db_connection) {
 		this.obj_db_connection = obj_db_connection;
 	}
 
