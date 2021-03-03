@@ -2,13 +2,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DB_SELECT {
+public class DB_INDIVIDUALS_SELECT {
 	
 	private DB_CONNECTION obj_db_connection = new DB_CONNECTION();
 	private Connection connection;
 	private PreparedStatement ps;
 	private ResultSet rs;
 	private String query;
+	
+	public static void main(String[] args) {
+		
+		
+	}
 	
 	public void SELECT_BY_PRIMARY_KEY(String id_pf)
 	{
