@@ -1,21 +1,16 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class DB_INDIVIDUALS_INSERT {
+public class Db_individuals_insert {
 	
-	private DB_CONNECTION obj_db_connection;
+	private Db_connection obj_db_connection;
 	private Connection connection;
 	private PreparedStatement ps;
 	
-	public static void main(String[] args) {
-		
-		DB_INDIVIDUALS_INSERT obj_db_insert = new DB_INDIVIDUALS_INSERT();
-		obj_db_insert.DB_INSERT_INDIVIDUALS_BUT_NO_PHONE_AND_ADRESS("1", "kalebe", "Silva", "123456789", "2000-12-03", "M", "kalebe@gmail.com", "12345678");
-	}
 	
 	public void DB_INSERT_INDIVIDUALS_BUT_NO_PHONE_AND_ADRESS(String id_pf,String first_name,String last_name, String cpf,String date_of_birth,String sex,String email,String password)
 	{
-		setObj_db_connection(new DB_CONNECTION());
+		setObj_db_connection(new Db_connection());
 		setConnection(getObj_db_connection().GETMYCONNECTION());
 		
 		setPs(null);
@@ -39,12 +34,12 @@ public class DB_INDIVIDUALS_INSERT {
 	
 	
 
-	public DB_CONNECTION getObj_db_connection() {
+	public Db_connection getObj_db_connection() {
 		return obj_db_connection;
 	}
 
 
-	public void setObj_db_connection(DB_CONNECTION obj_db_connection) {
+	public void setObj_db_connection(Db_connection obj_db_connection) {
 		this.obj_db_connection = obj_db_connection;
 	}
 
