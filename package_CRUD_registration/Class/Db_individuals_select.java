@@ -10,12 +10,9 @@ public class Db_individuals_select {
 	private ResultSet rs;
 	private String query;
 	
-	public static void main(String[] args) {
-		
-		
-	}
 	
-	public void SELECT_BY_PRIMARY_KEY(String id_pf)
+	
+	public void Select_people(String id_pf)
 	{
 		
 		setObj_db_connection(new Db_connection());
@@ -50,7 +47,7 @@ public class Db_individuals_select {
 		catch (Exception e) {System.out.println(e);}		
 	}
 
-	public void SELECT_ALL_FROM_TABLE()
+	public void Select_all()
 	{
 		setObj_db_connection(new Db_connection());
 		setConnection(getObj_db_connection().GETMYCONNECTION());
