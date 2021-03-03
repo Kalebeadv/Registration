@@ -3,24 +3,29 @@ import java.sql.DriverManager;
 
 public class DB_CONNECTION 
 {
+	private Connection connection;
 	
-	public Connection get_connection()
+	public Connection GETMYCONNECTION()
 	{
-		Connection connection= null;
+		setConnection(null); 
 		
 		try 
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Registration","root","");
+			setConnection(DriverManager.getConnection("jdbc:mysql://localhost:3306/Registration","root",""));
 			
 		} 
 		
-		catch (Exception e) 
-		
-		{
-			System.out.println(e);
-		}
+		catch (Exception e) {System.out.println(e);}
+		return getConnection();
+	}
+
+	public Connection getConnection() {
 		return connection;
+	}
+
+	public void setConnection(Connection connection) {
+		this.connection = connection;
 	}
 
 	
