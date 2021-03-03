@@ -8,7 +8,7 @@ public class Db_individuals_update {
 	private PreparedStatement ps;
 	private String query;
 	
-	public void Update_all(String new_id, String old_id, String new_first_name, String new_last_name, String new_cpf, String new_date_of_birth, String new_sex, String new_email, String new_password)
+	public void Update_all_attributes_of_people(String id_pf, String new_first_name, String new_last_name, String new_cpf, String new_date_of_birth, String new_sex, String new_email, String new_password)
 	{
 		setObj_db_connection(new Db_connection());
 		setConnection(getObj_db_connection().GETMYCONNECTION());
@@ -16,16 +16,16 @@ public class Db_individuals_update {
 		
 		try 
 		{
-			setQuery("Update individuals set ID_pf = ?, first_name = ?,last_name = ?, cpf = ?,date_of_birth = ?,sex = ?,email = ?,password = ? where ID_pf = ?");
-			getPs().setString(1,new_id);
-			getPs().setString(2, new_first_name);
-			getPs().setString(3, new_last_name);
-			getPs().setString(4, new_cpf);
-			getPs().setString(5, new_date_of_birth);
-			getPs().setString(6, new_sex);
-			getPs().setString(7, new_email);
-			getPs().setString(8, new_password);
-			getPs().setString(9, old_id);
+			setQuery("Update individuals set first_name = ?,last_name = ?, cpf = ?,date_of_birth = ?,sex = ?,email = ?,password = ? where ID_pf = ?");
+			setPs(getConnection().prepareStatement(getQuery()));
+			getPs().setString(1, new_first_name);
+			getPs().setString(2, new_last_name);
+			getPs().setString(3, new_cpf);
+			getPs().setString(4, new_date_of_birth);
+			getPs().setString(5, new_sex);
+			getPs().setString(6, new_email);
+			getPs().setString(7, new_password);
+			getPs().setString(8, id_pf);
 			System.out.println(getPs());
 			getPs().executeUpdate();
 			
