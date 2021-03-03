@@ -8,7 +8,9 @@ public class Db_individuals_insert {
 	private PreparedStatement ps;
 	private String query;
 	
-	public void DB_INSERT_INDIVIDUALS_BUT_NO_PHONE_AND_ADRESS(String id_pf,String first_name,String last_name, String cpf,String date_of_birth,String sex,String email,String password)
+	
+	
+	public void Insert_people(String id_pf,String first_name,String last_name, String cpf,String date_of_birth,String sex,String email,String password)
 	{
 		setObj_db_connection(new Db_connection());
 		setConnection(getObj_db_connection().GETMYCONNECTION());
@@ -17,7 +19,7 @@ public class Db_individuals_insert {
 		try 
 		{
 			setQuery("INSERT INTO individuals(id_pf,first_name,last_name,cpf,date_of_birth,sex,email,password) values (?,?,?,?,?,?,?,?)");
-			setPs(connection.prepareStatement(getQuery()));
+			setPs(getConnection().prepareStatement(getQuery()));
 			getPs().setString(1, id_pf);
 			getPs().setString(2, first_name);
 			getPs().setString(3, last_name);
