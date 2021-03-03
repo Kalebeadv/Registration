@@ -1,7 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DB_CONNECTION 
+public class Db_connection 
 {
 	private Connection connection;
 	
