@@ -11,18 +11,14 @@ create table legal_entity(ID_pj int, Cnpj varchar(20),
 social_reason varchar(400), fancy_name varchar(100),
 contact varchar(100), primary key(ID_pj));
 
-create table phone_address(ID int,ID_pf int, ID_pj int, 
-primary key(ID),
-foreign key(ID_pf) references individuals(ID_pf),
-foreign key(ID_pj) references legal_entity(ID_pj));
+create table phones(FK_PHONE_ID_PK int, FK_PHONE_ID_PJ int,phone_ varchar(20),  
+foreign key(FK_PHONE_ID_PK) references individuals(ID_pf),
+foreign key(FK_PHONE_ID_PJ) references legal_entity(ID_pj));
 
-create table phone(ID int,phone_one varchar(20), 
-phone_two varchar(20), 
-foreign key(ID) references phone_address(ID));
-
-create table address(ID int, zip_code int(20),
+create table address(FK_ADDRESS_ID_PK int, FK_ADDRESS_ID_PJ int, zip_code int(20),
 address varchar(300), residence_number int(10),
 neignborhood varchar(200), city varchar(100),
 state varchar(40), 
-foreign key(ID) references phone_address(ID));
+foreign key(FK_ADDRESS_ID_PK) references individuals(ID_pf),
+foreign key(FK_ADDRESS_ID_PJ) references legal_entity(ID_pj));
 
